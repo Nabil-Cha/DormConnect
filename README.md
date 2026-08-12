@@ -1,14 +1,10 @@
-# HCI SoSe 25
+
 
 ---
-
-![Build Status](https://code.fbi.h-da.de/hci-trapp/hci-lab-stud-base/badges/main/pipeline.svg)
 
 [AI Usage Note](#-ai-usage-note)
 
 ## Note About the Code Freeze
-
-**We'd like the Code Freeze to take place on July 8th.**
 
 >**Note:**
 > The source files of the app are in the directory 'src' instead of 'app'. This has already been cleared up.
