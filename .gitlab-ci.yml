@@ -1,0 +1,81 @@
+# GitLab CI/CD Pipeline für Flutter Web + MkDocs
+
+stages:
+  - build
+  - test
+  - publish
+
+variables:
+  DOCKER_REGISTRY_MKDOCS: "registry.code.fbi.h-da.de/hci-trapp-public/hci-docker/build-mkdocs:latest"
+  DOCKER_REGISTRY_FLUTTER_WEB: "registry.code.fbi.h-da.de/hci-trapp-public/hci-docker/flutter-build-web:latest"
+
+# 🛠️ Flutter Web Build
+build-web-app:
+  stage: build
+  image:
+    name: ${DOCKER_REGISTRY_FLUTTER_WEB}
+  before_script:
+    - cd src
+    - flutter pub get
+    # Füge <base href="/app/"> direkt in index.html ein (statisch)
+    - sed -i '/<\head>/i\<base href="/app/">' web/index.html
+  script:
+    - flutter build web --base-href /app/
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  artifacts:
+    paths:
+      - src/build/web
+
+# 📚 MkDocs Build
+build-mkdocs:
+  stage: build
+  image:
+    name: ${DOCKER_REGISTRY_MKDOCS}
+  before_script:
+    - mkdocs --version
+  script:
+    - mkdocs build --strict --verbose
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  artifacts:
+    paths:
+      - public/docs
+
+# ✅ Code-Quality für Flutter
+code-quality:
+  stage: test
+  image:
+    name: ${DOCKER_REGISTRY_FLUTTER_WEB}
+  before_script:
+    - cd src
+    - export PATH="$PATH":"$HOME/.pub-cache/bin"
+  script:
+    - flutter pub get
+    - flutter analyze
+    - dart pub global activate flutter_analyze_reporter
+    - flutter_analyze_reporter --output report.json --reporter gitlab
+  rules:
+    - changes:
+        - src/**/*
+      allow_failure: true
+  artifacts:
+    reports:
+      codequality: src/report.json
+
+# 🌐 GitLab Pages Deployment
+pages:
+  stage: publish
+  script:
+    - test -f src/build/web/index.html && mkdir -p public/app && cp -r -v src/build/web/* public/app || true
+    - echo "🔗 Deine Web-App ist erreichbar unter:"
+    - echo "https://${CI_PROJECT_NAMESPACE}.gitlab.io/${CI_PROJECT_NAME}/app/"
+  needs:
+    - job: build-mkdocs
+    - job: build-web-app
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  artifacts:
+    paths:
+      - public
+

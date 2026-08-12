@@ -1,0 +1,9 @@
+{
+  "home_title": "Zählen", 
+  "home_fab_tooltip": "Erhöhen",
+  "settings_title": "Einstellungen",
+  "settings_switch_mode": "Dunkel",
+  "settings_text_name": "Name",
+  "settings_text_name_hint_text": "Gib deinen Namen ein"
+  
+}

@@ -1,0 +1,8 @@
+# Normalize line endings
+* text=auto
+
+# Ignore line-ending changes in generated files
+*.cc text eol=lf
+*.h text eol=lf
+*.cmake text eol=lf
+*.swift text eol=lf

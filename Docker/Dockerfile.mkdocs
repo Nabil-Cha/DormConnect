@@ -1,0 +1,14 @@
+# Dockerfile.mkdocs
+
+FROM python:latest
+
+# update all packages
+RUN apt-get update -y && \
+  apt-get upgrade -y
+
+RUN apt-get update && apt-get install -y \
+  bash \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install MkDocs and dependencies
+RUN pip install mkdocs mkdocs-material mkdocs-macros-plugin mkdocs-enumerate-headings-plugin mkdocs-autorefs mkdocs-bibtex mkdocs-mermaid2-plugin

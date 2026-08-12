@@ -1,0 +1,104 @@
+name: hci_mi5y_dormconnect
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  supabase_flutter: ^2.9.0
+  shared_preferences: ^2.5.3
+  provider: ^6.0.0
+  image_picker: ^1.0.4
+  flutter_svg: ^2.1.0
+  intl: ^0.20.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.10.0
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/icon.png"
+
+  flutter_lints: ^5.0.0
+
+flutter:
+  assets:
+    - assets/icons/location.svg
+    - assets/icons/heart.svg
+    - assets/icons/search.svg
+    - assets/icons/calendar.svg
+
+    # Navigation bar icons
+    - assets/icons/navigation_bar/explore_hollow.svg
+    - assets/icons/navigation_bar/explore_filled.svg
+    - assets/icons/navigation_bar/home_hollow.svg
+    - assets/icons/navigation_bar/home_filled.svg
+    - assets/icons/navigation_bar/person_hollow.svg
+    - assets/icons/navigation_bar/person_filled.svg
+    - assets/icons/navigation_bar/group_hollow.svg
+    - assets/icons/navigation_bar/group_filled.svg
+    - assets/icons/event.svg
+
+    # Category icons
+    - assets/icons/categories/academics.svg
+    - assets/icons/categories/arts.svg
+    - assets/icons/categories/career.svg
+    - assets/icons/categories/career.svg
+    - assets/icons/categories/community.svg
+    - assets/icons/categories/culture.svg
+    - assets/icons/categories/diy.svg
+    - assets/icons/categories/food.svg
+    - assets/icons/categories/games.svg
+    - assets/icons/categories/outdoors.svg
+    - assets/icons/categories/socials.svg
+    - assets/icons/categories/sports.svg
+    - assets/icons/categories/wellness.svg
+
+    # Images
+    - assets/images/activities/grill.png
+    - assets/images/placeholder.png
+    - assets/images/placeholder_2.jpg
+    - assets/images/communities_assets/fair.jpg
+    - assets/images/communities_assets/karlshof.jpg
+    - assets/images/communities_assets/karlshof_2.jpg
+    - assets/images/communities_assets/lab.jpg
+    - assets/images/communities_assets/lux.jpg
+    - assets/images/communities_assets/rest.jpeg
+    - assets/images/communities_assets/rest_2.jpg
+    - assets/images/communities_assets/studentendorf.jpg
+    - assets/images/communities_assets/studentendorf_2.jpg
+  fonts:
+    - family: NotoSans
+      fonts:
+          - asset: assets/fonts/noto_sans/NotoSans-VariableFont_width.ttf
+          - asset: assets/fonts/noto_sans/NotoSans-Italic-VariableFont_width.ttf
+            style: italic
+          - asset: assets/fonts/noto_sans/NotoSans-Thin.ttf
+            weight: 100
+          - asset: assets/fonts/noto_sans/NotoSans-ThinItalic.ttf
+            weight: 100
+            style: italic
+          - asset: assets/fonts/noto_sans/NotoSans-ExtraLight.ttf
+            weight: 200
+          - asset: assets/fonts/noto_sans/NotoSans-ExtraLightItalic.ttf
+            weight: 200
+            style: italic
+          - asset: assets/fonts/noto_sans/NotoSans-Medium.ttf
+            weight: 500
+          - asset: assets/fonts/noto_sans/NotoSans-SemiBold.ttf
+            weight: 600
+          - asset: assets/fonts/noto_sans/NotoSans-ExtraBold.ttf
+            weight: 800
+          - asset: assets/fonts/noto_sans/NotoSans-Black.ttf
+            weight: 900
+
+  uses-material-design: true

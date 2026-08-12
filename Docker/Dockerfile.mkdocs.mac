@@ -1,0 +1,12 @@
+# Dockerfile.mkdocs
+
+FROM squidfunk/mkdocs-material
+
+# Install MkDocs and dependencies
+RUN pip install mkdocs mkdocs-material mkdocs-macros-plugin mkdocs-enumerate-headings-plugin mkdocs-autorefs mkdocs-bibtex mkdocs-mermaid2-plugin
+
+# how to use it locally on a mac: 
+# in the folder Docker run
+# docker build -f ./Dockerfile.mkdocs -t "build-mkdocs" .
+# switch to the main project folder and run
+# docker run --rm -it -p 8000:8000 -v ${PWD}:/docs build-mkdocs
