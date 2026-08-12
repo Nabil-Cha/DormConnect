@@ -18,7 +18,6 @@ The focus is on enjoyment, spontaneity, and shared experiences—especially duri
 becomes a bit much. From film nights and study sessions to weekend barbecues, the app is meant to be a quiet reminder
 that campus life doesn’t have to feel isolating.
 
-
 #### ✨ AI Usage Note
 
 To improve clarity, consistency, and readability, sections of this README and the documentation were refined using
