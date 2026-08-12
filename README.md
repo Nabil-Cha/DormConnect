@@ -18,15 +18,6 @@ The focus is on enjoyment, spontaneity, and shared experiences—especially duri
 becomes a bit much. From film nights and study sessions to weekend barbecues, the app is meant to be a quiet reminder
 that campus life doesn’t have to feel isolating.
 
-# Work Matrix
-
-Please complete the following list according to the instructions provided in the "Grading" section on Moodle before your final presentation.
-
-- Lab 1+2 (User Research): 15%
-- Lab 3 (Design...): 30%
-- Lab 4+5 (Implementation, App): 50%
-- Lab 6 (UX Evaluation): 5%
-
 
 ## Read This
 
