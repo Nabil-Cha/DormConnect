@@ -4,19 +4,6 @@
 
 [AI Usage Note](#-ai-usage-note)
 
-## Note About the Code Freeze
-
->**Note:**
-> The source files of the app are in the directory 'src' instead of 'app'. This has already been cleared up.
-
->**Note:**
-> Parts of this documentation have been enhanced with the help of AI tools. For more details, see the AI usage
-note at the bottom of this page.
-
->**Note:**
-> The initial commits in the project were made by the user 'abxod,' which is the GitHub account of Abdullah Sulimani.
-> I have since corrected this.
-
 # Project Vision
 
 This app gives students living in dormitories—or even those nearby—a way to connect with others through casual, locally
